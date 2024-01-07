@@ -1,7 +1,7 @@
 cards = [];
 cartegiuste=[];
 let segnale = false;
-let flipSound = new Audio('../assets/sounds/flip.mp3');
+let flipSound = new Audio('assets/sounds/flip.mp3');
 
 function startGame() {
     var difficultySelect = document.getElementById("tabelsize");
@@ -13,7 +13,6 @@ function startGame() {
     tabella.style.height = "900px"; // setto l'altezza della tabella
     // faccio partire un cronometro che parte da 0 e va avanti fino a che non si vince
 }
-
 
 function createCards(tabelsize) {
     while (cards.length < tabelsize) {
@@ -42,7 +41,7 @@ function createTable(tabelsize) {
         for (let j = 0; j < 4; j++) { // Change the condition to j < 3
              // Add the card value to the table cell and image start with the same name "imagine" and the card value for example "imagine1" and a function to flip the card when is presed the cell
             contatore++;
-            codicedaaggiungere += "<td onclick='flipCard("+contatore+")'><img src='../assets/images/retro.png' width=20%  id='imagine" + contatore + "'></td>";
+            codicedaaggiungere += "<td onclick='flipCard("+contatore+")'><img src='assets/images/retro.png' width=20%  id='imagine" + contatore + "'></td>";
             
         }
         codicedaaggiungere += "</tr>"; // Add closing </tr> tag
@@ -67,7 +66,7 @@ function flipCard(card) {
     flipSound.play();
 
 
-    image.src = "../assets/images/imagine"+ cards[card-1] + ".svg";
+    image.src = "assets/images/imagine"+ cards[card-1] + ".svg";
     image.onclick = "";
     checkCards(card);
 }
@@ -103,15 +102,14 @@ function checkCards(card) {
             setTimeout(function() {
                 let image1 = document.getElementById("imagine" + firstCard);
                 let image2 = document.getElementById("imagine" + card);
-                image1.src = "../assets/images/retro.png";
-                image2.src = "../assets/images/retro.png";
+                image1.src = "assets/images/retro.png";
+                image2.src = "assets/images/retro.png";
                 firstCard = 0;
                 segnale = false;
             }, 400)
         }
     }
 }
-
 function elimina(elemento) {
 
     const element = document.getElementById(elemento);
